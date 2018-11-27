@@ -1,8 +1,20 @@
 class FiguresController < ApplicationController
-post '/figures' do
-  binding.pry
-end
-  
+  post '/figures' do
+    binding.pry
+    unless params[:title][:name].empty?
+
+    end
+
+    unless params[:landmark][:name].empty?
+
+    end
+
+    titles = params[:figure][:title_ids].map { |id| Title.find(id) }
+    landmarks = params[:figure][:landmark_ids].map { |id| Landmark.find(id) }
+    binding.pry
+    figure = Figure.create(landmarks: landmarks, titles: titles)
+  end
+
   get '/figures/new' do
     @landmarks = Landmark.all
     @titles = Title.all
