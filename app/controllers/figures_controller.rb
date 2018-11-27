@@ -1,8 +1,10 @@
 class FiguresController < ApplicationController
   post '/figures' do
+    binding.pry
     unless params[:title][:name].empty?
+      binding.pry
       new_title = Title.create(name: params[:title][:name])
-      params[:figure][:title_ids] << new_title.id.to_s
+      params[:figure][:title_ids] << new_title.id
     end
 
     unless params[:landmark][:name].empty?
@@ -10,7 +12,6 @@ class FiguresController < ApplicationController
     end
 
     titles = params[:figure][:title_ids]&.map { |id| Title.find(id) } || []
-    binding.pry
     landmarks = params[:figure][:landmark_ids]&.map { |id| Landmark.find(id) } || []
     figure = Figure.create(landmarks: landmarks, titles: titles)
     redirect "figures/#{figure.id}"
