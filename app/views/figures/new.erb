@@ -17,7 +17,7 @@
   <fieldset id="landmarks">
     <legend>Landmarks:</legend>
     <% @landmarks.each do |landmark| %>
-      <input type="checkbox" value="<%= landmark.id %>" id="landmark<%= landmark.id %>"
+      <input type="checkbox" value="<%= landmark.id %>" id="landmark_<%= landmark.id %>"
         name="figure[landmark_ids][]">
       <%= landmark.name %><br>
     <% end %>
