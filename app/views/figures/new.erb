@@ -6,7 +6,7 @@
   <fieldset id="titles">
     <legend>Titles:</legend>
     <% @titles.each do |title| %>
-      <input type="checkbox" value="<%= title.id %>" id="title_<%= title.id %>" 
+      <input type="checkbox" value="<%= title.id %>" id="title_<%= title.id %>"
         name="figure[title_ids][]">
       <%= title.name %><br>
     <% end %>
