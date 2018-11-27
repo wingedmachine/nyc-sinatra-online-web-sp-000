@@ -1,14 +1,14 @@
 class LandmarksController < ApplicationController
   get '/landmarks' do
-    
+    erb :'/figures/index'
   end
 
   post '/landmarks' do
-    
+
   end
 
   get '/landmarks/new' do
-    
+
   end
 
   get '/landmarks/:id' do
@@ -17,10 +17,10 @@ class LandmarksController < ApplicationController
   end
 
   put '/landmarks/:id' do
-    
+
   end
 
   get '/landmarks/:id/edit' do
-    
+
   end
 end
