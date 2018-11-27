@@ -1,6 +1,5 @@
 class FiguresController < ApplicationController
   post '/figures' do
-    binding.pry
     unless params[:title][:name].empty?
 
     end
@@ -9,6 +8,7 @@ class FiguresController < ApplicationController
 
     end
 
+binding.pry
     titles = params[:figure][:title_ids].map { |id| Title.find(id) }
     landmarks = params[:figure][:landmark_ids].map { |id| Landmark.find(id) }
     binding.pry
