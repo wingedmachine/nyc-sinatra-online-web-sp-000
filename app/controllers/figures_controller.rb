@@ -11,6 +11,7 @@ class FiguresController < ApplicationController
     titles = params[:figure][:title_ids]&.map { |id| Title.find(id) }
     landmarks = params[:figure][:landmark_ids]&.map { |id| Landmark.find(id) }
     figure = Figure.create(landmarks: landmarks, titles: titles)
+    binding.pry
     figure.save
     redirect "figures/#{figure.id}"
   end
