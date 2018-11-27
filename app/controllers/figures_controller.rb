@@ -13,7 +13,6 @@ class FiguresController < ApplicationController
     binding.pry
     figure = Figure.create(landmarks: landmarks, titles: titles)
     binding.pry
-    figure.save
     redirect "figures/#{figure.id}"
   end
 
