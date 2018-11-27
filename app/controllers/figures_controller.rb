@@ -35,7 +35,7 @@ class FiguresController < ApplicationController
   end
 
   put '/figures/:id' do
-
+    redirect "/figures/#{params[:id]}"
   end
 
   get '/figures/:id/edit' do
