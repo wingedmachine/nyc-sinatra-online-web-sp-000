@@ -13,7 +13,7 @@ class FiguresController < ApplicationController
 
     titles = params[:figure][:title_ids]&.map { |id| Title.find(id) } || []
     landmarks = params[:figure][:landmark_ids]&.map { |id| Landmark.find(id) } || []
-    figure = Figure.create(landmarks: landmarks, titles: titles)
+    figure = Figure.create(name: params[:figure][:name], landmarks: landmarks, titles: titles)
     redirect "figures/#{figure.id}"
   end
 
