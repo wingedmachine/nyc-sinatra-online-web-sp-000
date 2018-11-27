@@ -3,6 +3,10 @@
 <form action="/figures" method="post">
   <label for="figure[name]">Name: </label>
   <input name="figure[name]" type="text"><br>
+  Titles:<br>
+  <% @titles.each do |title| %>
+    <input type="checkbox" value="<%= title.id %>" name="figure[title_ids][]"><%= title.name %><br>
+  <% end %>
   <input id="submit" type="submit">
 </form>
 
