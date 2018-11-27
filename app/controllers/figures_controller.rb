@@ -9,7 +9,7 @@ class FiguresController < ApplicationController
     end
 
     unless params[:landmark][:name].empty?
-
+      landmarks << Landmark.create(name: params[:landmark][:name])
     end
 
     figure = Figure.create( name: params[:figure][:name],
