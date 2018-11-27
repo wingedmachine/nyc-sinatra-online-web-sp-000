@@ -25,7 +25,6 @@ describe "Figure" do
   end
 
   it "has many titles" do
-    binding.pry
     @figure.titles << @mayor
     @figure.titles << @councilman
     expect(@figure.titles).to include(@mayor)
