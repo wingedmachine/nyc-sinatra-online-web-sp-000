@@ -28,4 +28,9 @@ class FiguresController < ApplicationController
     @titles = Title.all
     erb :'/figures/new'
   end
+
+  get '/figures/:id' do
+    @figure = Figure.find(params[:id])
+    erb :'/figures/show'
+  end
 end
