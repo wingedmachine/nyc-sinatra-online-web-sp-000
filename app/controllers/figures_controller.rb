@@ -11,7 +11,7 @@ class FiguresController < ApplicationController
     unless params[:landmark][:name].empty?
 
     end
-    
+
     figure = Figure.create( name: params[:figure][:name],
                             landmarks: landmarks,
                             titles: titles)
