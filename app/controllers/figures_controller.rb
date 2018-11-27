@@ -8,10 +8,8 @@ class FiguresController < ApplicationController
 
     end
 
-binding.pry
-    titles = params[:figure][:title_ids].map { |id| Title.find(id) }
-    landmarks = params[:figure][:landmark_ids].map { |id| Landmark.find(id) }
-    binding.pry
+    titles = params[:figure][:title_ids]&.map { |id| Title.find(id) }
+    landmarks = params[:figure][:landmark_ids]&.map { |id| Landmark.find(id) }
     figure = Figure.create(landmarks: landmarks, titles: titles)
   end
 
