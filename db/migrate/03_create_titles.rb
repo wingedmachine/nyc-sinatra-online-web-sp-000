@@ -1,9 +1,7 @@
-class CreateLandmarks < ActiveRecord::Migration
+class CreateTitles < ActiveRecord::Migration
   def change
-    create_table :landmarks do |t|
+    create_table :titles do |t|
       t.string :name
-      t.integer :year_completed
-      t.integer :figure_id
     end
   end
 end
