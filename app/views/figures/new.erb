@@ -5,7 +5,13 @@
   <input name="figure[name]" type="text"><br>
   Titles:<br>
   <% @titles.each do |title| %>
-    <input type="checkbox" value="<%= title.id %>" name="figure[title_ids][]"><%= title.name %><br>
+    <input type="checkbox" value="<%= title.id %>" name="figure[title_ids][]">
+    <%= title.name %><br>
+  <% end %>
+  Landmarks:<br>
+  <% @landmarks.each do |landmark| %>
+    <input type="checkbox" value="<%= landmark.id %>" name="figure[landmark_ids][]">
+    <%= landmark.name %><br>
   <% end %>
   <input id="submit" type="submit">
 </form>
