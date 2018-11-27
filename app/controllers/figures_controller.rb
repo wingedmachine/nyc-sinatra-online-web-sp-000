@@ -3,7 +3,6 @@ class FiguresController < ApplicationController
     if params[:title][:name].empty?
       new_title = Title.create(name: params[:title][:name])
       params[:figure][:title_ids] << new_title.id
-      binding.pry
     end
 
     if params[:landmark][:name].empty?
