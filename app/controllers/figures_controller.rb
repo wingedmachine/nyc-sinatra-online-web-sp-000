@@ -5,7 +5,6 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-
     titles = params[:figure][:title_ids]&.map { |id| Title.find(id) } || []
     landmarks = params[:figure][:landmark_ids]&.map { |id| Landmark.find(id) } || []
 
@@ -35,6 +34,23 @@ class FiguresController < ApplicationController
   end
 
   put '/figures/:id' do
+    figure = Figure.find(params[:id])
+    titles = params[:figure][:title_ids]&.map { |id| Title.find(id) } || []
+    landmarks = params[:figure][:landmark_ids]&.map { |id| Landmark.find(id) } || []
+
+    unless params[:title][:name].empty?
+      titles << Title.create(name: params[:title][:name])
+    end
+
+    unless params[:landmark][:name].empty?
+      landmarks << Landmark.create(name: params[:landmark][:name])
+    end
+    
+    figure.name = params[:figure][:name]
+    figure.titles = titles
+    figure.landmarks = landmarks
+    figure.save
+    
     redirect "/figures/#{params[:id]}"
   end
 
