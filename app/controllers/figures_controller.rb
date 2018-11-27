@@ -1,9 +1,11 @@
 class FiguresController < ApplicationController
   post '/figures' do
+    binding.pry
     unless params[:title][:name].empty?
       binding.pry
       new_title = Title.create(name: params[:title][:name])
       params[:figure][:title_ids] << new_title.id
+      binding.pry
     end
 
     unless params[:landmark][:name].empty?
