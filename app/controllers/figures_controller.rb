@@ -1,11 +1,11 @@
 class FiguresController < ApplicationController
   post '/figures' do
-    if params[:title][:name].empty?
+    unless params[:title][:name].empty?
       new_title = Title.create(name: params[:title][:name])
       params[:figure][:title_ids] << new_title.id.to_s
     end
 
-    if params[:landmark][:name].empty?
+    unless params[:landmark][:name].empty?
 
     end
 
