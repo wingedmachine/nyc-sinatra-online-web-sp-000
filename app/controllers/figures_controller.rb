@@ -20,7 +20,7 @@ class FiguresController < ApplicationController
     figure = Figure.create( name: params[:figure][:name],
                             landmarks: landmarks,
                             titles: titles)
-    redirect "figures/#{figure.id}"
+    # redirect "figures/#{figure.id}"
   end
 
   get '/figures/new' do
