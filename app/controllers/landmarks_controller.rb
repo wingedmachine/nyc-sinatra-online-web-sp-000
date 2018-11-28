@@ -5,11 +5,11 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks' do
-
+    erb :'/landmarks/create'
   end
 
   get '/landmarks/new' do
-
+    
   end
 
   get '/landmarks/:id' do
