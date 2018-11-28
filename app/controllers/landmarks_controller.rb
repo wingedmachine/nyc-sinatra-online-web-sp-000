@@ -19,7 +19,7 @@ class LandmarksController < ApplicationController
   end
 
   put '/landmarks/:id' do
-
+binding.pry
   end
 
   get '/landmarks/:id/edit' do
